@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Contacts</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+</head>
+
+<body>
+    <section data-role="page" id="contacts">
+        <div data-role="header">
+            <a href="#NewContact" data-icon="plus" onclick="newContact()">Add</a>
+            <h1>Contacts</h1>
+        </div>
+        <div data-role="content">
+            <ul data-role="listview" data-filter="true" data-inset="true" id="contactsList">
+
+            </ul>
+        </div>
+
+    </section>
+
+    <section data-role="page" id="NewContact">
+
+        <div data-role="header">
+            <a href="#contacts" data-add-back-btn="true">Back</a>
+            <h1>New Contact</h1>
+        </div>
+
+        <br>
+        <article data-role="content">
+
+            <div class="ui-field-contain">
+                <label for="textinput-1">Name:</label>
+                <input type="text" name="name" id="name">
+            </div>
+            <div class="ui-field-contain">
+                <label for="textinput-1">Phone:</label>
+                <input type="text" name="textinputMobile" id="mobile" placeholder="01xxxxxxxxx">
+            </div>
+            <div class="ui-field-contain">
+                <label for="textinput-1">Email:</label>
+                <input type="text" name="email" id = "email">
+            </div>
+            <div class="ui-field-contain">
+                <label for="flip-1">Gender:</label>
+                <select name="flip-1" id="flip-1" data-role="slider">
+                    <option value="off">Female</option>
+                    <option value="on">Male</option>
+                </select>
+            </div>
+            <div class="ui-field-contain" style="align-content: center">
+
+
+                <a href="#" class="ui-btn ui-btn-inline ui-icon-Confirm order ui-btn-icon-left" onclick="saveContact()">save</a>
+
+                <a href="#contacts" class="ui-btn ui-btn-inline ui-icon-delete ui-btn-icon-left">cancel</a>
+
+            </div>
+
+        </article>
+
+    </section>
+
+
+
+    </section>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    
+    <script src="index.js"></script>
+</body>
+
+</html>
