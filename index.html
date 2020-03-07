@@ -61,23 +61,43 @@
             <div class="ui-field-contain" style="align-content: center">
 
 
-                <a href="#" class="ui-btn ui-btn-inline ui-icon-Confirm order ui-btn-icon-left" onclick="saveContact()">save</a>
+                <a href="#" class="ui-btn ui-btn-inline ui-icon-Confirm order ui-btn-icon-left" id="saveContactBtn" onclick="saveContact()">save</a>
 
                 <a href="#contacts" class="ui-btn ui-btn-inline ui-icon-delete ui-btn-icon-left">cancel</a>
+                <a class="ui-btn ui-btn-inline ui-icon-delete ui-btn-icon-left"  href="#pagetwo" data-transition="fade" id="deletebtn">Delete</a>
 
             </div>
+                      
+  
 
         </article>
+       
+
+
+
 
     </section>
+    
+    <div data-role="page" data-dialog="true" id="pagetwo">
+  <div data-role="header">
+    <h1>Delete Contact !!</h1>
+  </div>
 
-
-
-    </section>
+  <div data-role="main" class="ui-content" id="divCenter">
+   <a href="#contacts" class="ui-btn ui-btn-inline ui-icon-delete ui-btn-icon-left">cancel</a>
+   <a class="ui-btn ui-btn-inline ui-icon-delete ui-btn-icon-left"  href="#contacts" data-transition="fade" onclick="deleteContact()">Delete</a>
+  </div>
+  
+    
+    </div>
+            
+    
+    
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     
-    <script src="index.js"></script>
+    <script src="index.js">
+    </script>
 </body>
 
 </html>

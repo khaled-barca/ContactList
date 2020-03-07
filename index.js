@@ -54,7 +54,7 @@ function validateEmail() {
 }
 
 function validatePhone() {
-    let phoneRegex = /\d{11}/;
+    let phoneRegex = /01[0125{1}][0-9]{8}/;
     return phoneRegex.test($("#mobile").val());
 }
 function saveContact() {
@@ -80,7 +80,37 @@ function saveContact() {
             insertContact(contact);
         }
         localStorage.setItem('contacts', JSON.stringify(data));
+        localStorage.getItem('id');
         $.mobile.navigate("#contacts");
         selected = undefined;
     }
+
+}
+jQuery.fn.center = function () {
+    this.css("position","absolute");
+    this.css("top", Math.max(0, (($(window).height() - $(this).outerHeight()) / 2) + 
+                                                $(window).scrollTop()) + "px");
+    this.css("left", Math.max(0, (($(window).width() - $(this).outerWidth()) / 2) + 
+                                                $(window).scrollLeft()) + "px");
+    return this;
+}
+function deleteContact()
+{
+
+     var contacts = get_contacts();
+    var myid = localStorage.getItem('id');
+    contacts.splice(myid, 1);
+        localStorage.setItem('contacts', JSON.stringify(contacts));
+      $.mobile.navigate("#contacts"); 
+    $('#contactsList').listview('refresh');
+    return false; 
+    
+}
+function get_contacts() {
+    var contacts = new Array;
+    var contacts_str = localStorage.getItem('contacts');
+    if (contacts_str !== null) {
+        contacts = JSON.parse(contacts_str);
+    }
+    return contacts;
 }
